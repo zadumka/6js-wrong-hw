@@ -1,48 +1,28 @@
-class Storage {
-  items;
-
-  constructor(items) {
-    this.items = items;
-  }
-
-  getItems(obj) {
-    return obj.items;
-  }
-
-  addItem(obj, newItem) {
-    obj.items.push(newItem);
-  }
-
-  removeItem(obj, itemToRemove) {
-    obj.items = obj.items.filter((item) => item !== itemToRemove);
-  }
-}
-
 const customer = {
   username: "Mango",
   balance: 24000,
   discount: 0.1,
   orders: ["Burger", "Pizza", "Salad"],
 
-  getBalance(obj) {
-    return obj.balance;
+  getBalance() {
+    return customer.balance;
   },
 
-  getDiscount(obj) {
-    return obj.discount;
+  getDiscount() {
+    return customer.discount;
   },
 
-  setDiscount(obj, value) {
-    obj.discount = value;
+  setDiscount(value) {
+    customer.discount = value;
   },
 
-  getOrders(obj) {
-    return obj.orders;
+  getOrders() {
+    return customer.orders;
   },
 
-  addOrder(obj, cost, order) {
-    obj.balance -= cost - cost * obj.discount;
-    obj.orders.push(order);
+  addOrder(cost, order) {
+    customer.balance -= cost - cost * customer.discount;
+    customer.orders.push(order);
   },
 };
 
